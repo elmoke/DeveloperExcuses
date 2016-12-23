@@ -134,6 +134,7 @@ NSString *kHtmlRegex = @"<a href=\"/\" rel=\"nofollow\" style=\"text-decoration:
         NSArray *matches = [regex matchesInString:html options:0 range:NSMakeRange(0, html.length)];
         for (NSTextCheckingResult *match in matches) {
             quote = [html substringWithRange:[match rangeAtIndex:1]];
+            quote = [quote stringByAppendingString:@"\n\n\n ©2016 DeveloperExcuses.com"];
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
